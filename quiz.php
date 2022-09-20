@@ -51,7 +51,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['username']) && isset($count)) {
 
                     <?php endforeach; ?>
                     <div class="form-group">
-                        <input type="submit" value="Submit" name="submit" class="btn btn-primary"/>
+                        <input type="submit" value="Submit" name="submit" class="btn btn-primary" style="width: 115px; height: 40px;"/>
                     </div>
                     </form>
                 <?php }?>
