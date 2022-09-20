@@ -14,6 +14,7 @@ if($_POST['submit']) {
     
     $total_questions = mysqli_num_rows($result_ques);
     $correct = 0;
+    $unattempted = 0;
     $total = $total_questions;
 
     foreach($result_ques as $value):
@@ -29,6 +30,8 @@ if($_POST['submit']) {
                 echo "Your Answer : ".$answer."</br>";
                 echo "Correct Answer : ".$value['Correct_Option']."</br>";
             }
+        }else {
+            $unattempted++;
         }
 
     endforeach;
@@ -39,7 +42,10 @@ if($_POST['submit']) {
 
     echo "</br></br><h1>Your Score    :".$correct."</h1>";
     echo "Correct     :". $correct."</br>";
-    echo "Incorrect   :".$incorrect;
+    echo "Incorrect   :".$incorrect."</br>";
+    if($unattempted){
+        echo "Unattempted :". $unattempted;
+    }
 
 }
 ?>
